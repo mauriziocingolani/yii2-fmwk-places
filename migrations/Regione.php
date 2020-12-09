@@ -2,7 +2,7 @@
 
 namespace mauriziocingolani\places\migrations;
 
-class Area extends \mauriziocingolani\yii2fmwkphp\Migration {
+class Regione extends \mauriziocingolani\yii2fmwkphp\Migration {
 
     public function create() {
         $this->createTable('places_regioni', [

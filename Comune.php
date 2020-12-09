@@ -8,6 +8,9 @@ use mauriziocingolani\yii2fmwkphp\ActiveRecord;
  * @property integer $ComuneID
  * @property integer $ProvinciaID
  * @property string $Comune
+ * 
+ * Relazioni
+ * @property Provincia $provincia
  */
 class Comune extends ActiveRecord {
 
@@ -17,8 +20,21 @@ class Comune extends ActiveRecord {
 
     /* Validators */
     /* Relazioni */
+
+    public function getProvincia() {
+        return $this->hasOne(Provincia::class, ['ProvinciaID' => 'ProvinciaID']);
+    }
+
     /* Eventi */
     /* Metodi */
     /* Getters-Setters */
     /* Metodi statici */
+
+    /**
+     * @return Comune[]
+     */
+    public static function GetAll() {
+        return self::find()->orderBy('Comune')->all();
+    }
+
 }

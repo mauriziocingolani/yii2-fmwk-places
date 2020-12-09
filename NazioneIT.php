@@ -5,13 +5,15 @@ namespace mauriziocingolani\places;
 use mauriziocingolani\yii2fmwkphp\ActiveRecord;
 
 /**
- * @property integer $AreaID
- * @property string $Area
+ * @property integer $NazioneID
+ * @property string $Nazione
  */
-class Area extends ActiveRecord {
+class NazioneIT extends ActiveRecord {
+
+    const ITALIA = 106;
 
     public static function tableName(): string {
-        return 'places_aree';
+        return 'places_nazioni';
     }
 
     /* Validators */
@@ -22,10 +24,10 @@ class Area extends ActiveRecord {
     /* Metodi statici */
 
     /**
-     * @return Area[]
+     * @return NazioneIT[]
      */
     public static function GetAll() {
-        return self::find()->orderBy('AreaID')->all();
+        return self::find()->orderBy('Nazione')->all();
     }
 
 }

@@ -8,6 +8,9 @@ use mauriziocingolani\yii2fmwkphp\ActiveRecord;
  * @property integer $RegioneID
  * @property integer $AreaID
  * @property string $Regione
+ * 
+ * Relazioni
+ * @property Area $area
  */
 class Regione extends ActiveRecord {
 
@@ -17,8 +20,21 @@ class Regione extends ActiveRecord {
 
     /* Validators */
     /* Relazioni */
+
+    public function getArea() {
+        return $this->hasOne(Area::class, ['AreaID' => 'AreaID']);
+    }
+
     /* Eventi */
     /* Metodi */
     /* Getters-Setters */
     /* Metodi statici */
+
+    /**
+     * @return Regione[]
+     */
+    public static function GetAll() {
+        return self::find()->orderBy('Regione')->all();
+    }
+
 }
