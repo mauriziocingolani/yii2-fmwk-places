@@ -2,7 +2,7 @@
 
 namespace mauriziocingolani\yii2fmwkplaces\migrations;
 
-class NazioneIT extends \mauriziocingolani\yii2fmwkphp\Migration {
+class Nazione extends \mauriziocingolani\yii2fmwkphp\Migration {
 
     public function create() {
         $this->createTable('places_nazioni', [

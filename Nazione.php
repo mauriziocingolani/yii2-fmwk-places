@@ -8,7 +8,7 @@ use mauriziocingolani\yii2fmwkphp\ActiveRecord;
  * @property integer $NazioneID
  * @property string $Nazione
  */
-class NazioneIT extends ActiveRecord {
+class Nazione extends ActiveRecord {
 
     const ITALIA = 106;
 
