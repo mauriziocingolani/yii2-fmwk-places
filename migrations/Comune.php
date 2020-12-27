@@ -1,6 +1,6 @@
 <?php
 
-namespace mauriziocingolani\places\migrations;
+namespace mauriziocingolani\yii2fmwkplaces\migrations;
 
 class Comune extends \mauriziocingolani\yii2fmwkphp\Migration {
 

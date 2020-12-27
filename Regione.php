@@ -1,6 +1,6 @@
 <?php
 
-namespace mauriziocingolani\places;
+namespace mauriziocingolani\yii2fmwkplaces;
 
 use mauriziocingolani\yii2fmwkphp\ActiveRecord;
 
