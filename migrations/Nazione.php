@@ -7,14 +7,14 @@ class Nazione extends \mauriziocingolani\yii2fmwkphp\Migration {
     public function create() {
         $this->createTable('places_nazioni', [
             'NazioneID' => self::Pk(),
-            'Nome' => self::typeVarchar(255, true),
+            'Nazione' => self::typeVarchar(255, true),
             self::Pk('NazioneID'),
                 ], self::TableOptionsLatin());
-        $this->createIndex('unique_placesnazioni_nome', 'places_nazioni', 'Nome', true);
+        $this->createIndex('unique_placesnazioni_nazione', 'places_nazioni', 'Nazione', true);
     }
 
     public function data() {
-        $this->batchInsert('places_nazioni', ['Nome'], [
+        $this->batchInsert('places_nazioni', ['Nazione'], [
             [1 => 'Afghanistan'],
             [2 => 'Albania'],
             [3 => 'Algeria'],
