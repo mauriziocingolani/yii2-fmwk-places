@@ -11,6 +11,9 @@ use mauriziocingolani\yii2fmwkphp\ActiveRecord;
  * 
  * Relazioni
  * @property Provincia $provincia
+ * 
+ * Getters
+ * @property string $comune
  */
 class Comune extends ActiveRecord {
 
@@ -28,6 +31,11 @@ class Comune extends ActiveRecord {
     /* Eventi */
     /* Metodi */
     /* Getters-Setters */
+
+    public function getComune(): string {
+        return "$this->Comune ({$this->provincia->Sigla})";
+    }
+
     /* Metodi statici */
 
     /**
