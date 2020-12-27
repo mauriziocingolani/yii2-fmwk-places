@@ -12,7 +12,7 @@ class Regione extends \mauriziocingolani\yii2fmwkphp\Migration {
             self::Pk('RegioneID'),
                 ], self::TableOptionsLatin());
         $this->createIndex('unique_placesregioni_regione', 'places_regioni', 'Regione', true);
-        $this->addForeignKey('fk_placesregioni_area', 'places_regioni', 'AreaID', 'places_aree_aree');
+        $this->addForeignKey('fk_placesregioni_area', 'places_regioni', 'AreaID', 'places_aree');
     }
 
     public function data() {
