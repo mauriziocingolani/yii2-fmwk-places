@@ -37,4 +37,17 @@ class Comune extends ActiveRecord {
         return self::find()->orderBy('Comune')->all();
     }
 
+    public static function Search($search) {
+        return self::find()
+                        ->select([
+                            'id' => 'ComuneID',
+                            'text' => "CONCAT(Comune,' (',Sigla,')')",
+                        ])
+                        ->innerJoin('places_province', 'places_comuni.ProvinciaID=places_province.ProvinciaID')
+                        ->where(['like', "CONCAT(Comune,' (',Sigla,')')", "%$search%", false])
+                        ->orderBy('Comune')
+                        ->asArray()
+                        ->all();
+    }
+
 }
