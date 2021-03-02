@@ -18,7 +18,7 @@ class NazioneISO3166 extends \mauriziocingolani\yii2fmwkphp\Migration {
     }
 
     public function data() {
-        $this->batchInsert('places_nazioni_iso3166', ['NazioneID', 'NazioneIt', 'NazioneEn', 'NazioneCode'], [
+        $this->batchInsert('places_nazioni_iso3166', ['NazioneID', 'NazioneIt', 'NazioneEn', 'NazioneCodice'], [
             [1, 'Afghanistan', ' Afghanistan', 'AFG'],
             [2, 'Albania', ' Albania', 'ALB'],
             [7, 'Antartide', ' Antarctica', 'ATA'],
