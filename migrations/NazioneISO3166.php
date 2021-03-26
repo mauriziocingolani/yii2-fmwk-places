@@ -92,7 +92,7 @@ class NazioneISO3166 extends \mauriziocingolani\yii2fmwkphp\Migration {
             [69, 'Georgia del Sud e Isole Sandwich Australi', ' South Georgia and the South Sandwich Islands', 'SGS'],
             [62, 'Figi', ' Fiji', 'FJI'],
             [64, 'Finlandia', ' Finland', 'FIN'],
-            [102, 'Isole Åland', ' Åland Islands', 'ALA'],
+            [102, 'Isole Aland', ' Aland Islands', 'ALA'],
             [65, 'Francia', ' France', 'FRA'],
             [88, 'Guyana francese', ' French Guiana', 'GUF'],
             [173, 'Polinesia francese', ' French Polynesia', 'PYF'],

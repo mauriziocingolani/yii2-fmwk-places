@@ -26,7 +26,7 @@ class NazioneISO3166 extends ActiveRecord {
     /* Metodi statici */
 
     /**
-     * @return Nazione[]
+     * @return NazioneISO3166[]
      */
     public static function GetAll($orderByNation = 'It') {
         return self::find()->orderBy("Nazione$orderByNation")->all();
