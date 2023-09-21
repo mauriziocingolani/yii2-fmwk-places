@@ -15,7 +15,7 @@ class NazioneISO3166 extends ActiveRecord {
     const ITALIA = 106;
 
     public static function tableName(): string {
-        return 'places_nazioni_iso3166';
+        return '{{%places_nazioni_iso3166}}';
     }
 
     /* Validators */

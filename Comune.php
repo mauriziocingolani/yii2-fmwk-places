@@ -18,7 +18,7 @@ use mauriziocingolani\yii2fmwkphp\ActiveRecord;
 class Comune extends ActiveRecord {
 
     public static function tableName(): string {
-        return 'places_comuni';
+        return '{{%places_comuni}}';
     }
 
     /* Validators */
@@ -51,7 +51,7 @@ class Comune extends ActiveRecord {
                             'id' => 'ComuneID',
                             'text' => "CONCAT(Comune,' (',Sigla,')')",
                         ])
-                        ->innerJoin('places_province', 'places_comuni.ProvinciaID=places_province.ProvinciaID')
+                        ->innerJoin('{{%places_province}}', '{{%places_comuni}}.ProvinciaID={{%places_province}}.ProvinciaID')
                         ->where(['like', "CONCAT(Comune,' (',Sigla,')')", "%$search%", false])
                         ->orderBy('Comune')
                         ->asArray()

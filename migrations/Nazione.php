@@ -5,16 +5,16 @@ namespace mauriziocingolani\yii2fmwkplaces\migrations;
 class Nazione extends \mauriziocingolani\yii2fmwkphp\Migration {
 
     public function create() {
-        $this->createTable('places_nazioni', [
+        $this->createTable('{{%places_nazioni}}', [
             'NazioneID' => self::Pk(),
             'Nazione' => self::typeVarchar(255, true),
             self::Pk('NazioneID'),
                 ], self::TableOptionsLatin());
-        $this->createIndex('unique_placesnazioni_nazione', 'places_nazioni', 'Nazione', true);
+        $this->createIndex('unique_placesnazioni_nazione', '{{%places_nazioni}}', 'Nazione', true);
     }
 
     public function data() {
-        $this->batchInsert('places_nazioni', ['NazioneID', 'Nazione'], [
+        $this->batchInsert('{{%places_nazioni}}', ['NazioneID', 'Nazione'], [
             [1 , 'Afghanistan'],
             [2 , 'Albania'],
             [3 , 'Algeria'],
@@ -261,7 +261,7 @@ class Nazione extends \mauriziocingolani\yii2fmwkphp\Migration {
     }
 
     public function drop() {
-        $this->dropTable('places_nazioni');
+        $this->dropTable('{{%places_nazioni}}');
     }
 
 }

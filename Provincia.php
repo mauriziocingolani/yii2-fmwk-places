@@ -20,7 +20,7 @@ use mauriziocingolani\yii2fmwkphp\ActiveRecord;
 class Provincia extends ActiveRecord {
 
     public static function tableName(): string {
-        return 'places_province';
+        return '{{%places_province}}';
     }
 
     /* Validators */

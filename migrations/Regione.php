@@ -5,18 +5,18 @@ namespace mauriziocingolani\yii2fmwkplaces\migrations;
 class Regione extends \mauriziocingolani\yii2fmwkphp\Migration {
 
     public function create() {
-        $this->createTable('places_regioni', [
+        $this->createTable('{{%places_regioni}}', [
             'RegioneID' => self::Pk(),
             'AreaID' => self::typeUnsignedInteger(true),
             'Regione' => self::typeVarchar(50, true),
             self::Pk('RegioneID'),
                 ], self::TableOptionsLatin());
-        $this->createIndex('unique_placesregioni_regione', 'places_regioni', 'Regione', true);
-        $this->addForeignKey('fk_placesregioni_area', 'places_regioni', 'AreaID', 'places_aree');
+        $this->createIndex('unique_placesregioni_regione', '{{%places_regioni}}', 'Regione', true);
+        $this->addForeignKey('fk_placesregioni_area', '{{%places_regioni}}', 'AreaID', '{{%places_aree}}');
     }
 
     public function data() {
-        $this->batchInsert('places_regioni', ['RegioneID', 'AreaID', 'Regione'], [
+        $this->batchInsert('{{%places_regioni}}', ['RegioneID', 'AreaID', 'Regione'], [
             [1, 1, 'Liguria'],
             [2, 1, 'Lombardia'],
             [3, 1, 'Piemonte'],
@@ -41,7 +41,7 @@ class Regione extends \mauriziocingolani\yii2fmwkphp\Migration {
     }
 
     public function drop() {
-        $this->dropTable('places_regioni');
+        $this->dropTable('{{%places_regioni}}');
     }
 
 }

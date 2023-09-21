@@ -5,18 +5,18 @@ namespace mauriziocingolani\yii2fmwkplaces\migrations;
 class Comune extends \mauriziocingolani\yii2fmwkphp\Migration {
 
     public function create() {
-                $this->createTable('places_comuni', [
+                $this->createTable('{{%places_comuni}}', [
             'ComuneID' => self::Pk(),
             'ProvinciaID' => self::typeUnsignedInteger(true),
             'Comune' => self::typeVarchar(100, true),
             self::Pk('ComuneID'),
                 ], self::TableOptionsLatin());
-        $this->createIndex('unique_placescomuni_comuneprovincia', 'places_comuni', ['ProvinciaID', 'Comune'], true);
-        $this->addForeignKey('fk_placescomuni_provincia', 'places_comuni', 'ProvinciaID', 'places_province');
+        $this->createIndex('unique_placescomuni_comuneprovincia', '{{%places_comuni}}', ['ProvinciaID', 'Comune'], true);
+        $this->addForeignKey('fk_placescomuni_provincia', '{{%places_comuni}}', 'ProvinciaID', '{{%places_province}}');
     }
 
     public function data() {
-         $this->batchInsert('places_comuni', ['ProvinciaID', 'Comune'], [
+         $this->batchInsert('{{%places_comuni}}', ['ProvinciaID', 'Comune'], [
             [1, 'Arenzano'], [1, 'Avegno'], [1, 'Bargagli'], [1, 'Bogliasco'], [1, 'Borzonasca'], [1, 'Busalla'], [1, 'Camogli'], [1, 'Campo Ligure'], [1, 'Campomorone'], [1, 'Carasco'], [1, 'Casarza Ligure'], [1, 'Casella'], [1, 'Castiglione Chiavarese'], [1, 'Ceranesi'], [1, 'Chiavari'], [1, 'Cicagna'], [1, 'Cogoleto'], [1, 'Cogorno'], [1, 'Coreglia Ligure'], [1, 'Crocefieschi'], [1, 'Davagna'], [1, 'Fascia'], [1, 'Favale di Malvaro'], [1, 'Fontanigorda'], [1, 'Genova'], [1, 'Gorreto'], [1, 'Isola del Cantone'], [1, 'Lavagna'], [1, 'Leivi'], [1, 'Lorsica'], [1, 'Lumarzo'], [1, 'Masone'], [1, 'Mele'], [1, 'Mezzanego'], [1, 'Mignanego'], [1, 'Moconesi'], [1, 'Moneglia'], [1, 'Montebruno'], [1, 'Montoggio'], [1, 'Ne'], [1, 'Neirone'], [1, 'Orero'], [1, 'Pieve Ligure'], [1, 'Portofino'], [1, 'Propata'], [1, 'Rapallo'], [1, 'Recco'], [1, 'Rezzoaglio'], [1, 'Ronco Scrivia'], [1, 'Rondanina'], [1, 'Rossiglione'], [1, 'Rovegno'], [1, 'San Colombano Certenoli'], [1, 'Santa Margherita Ligure'], [1, 'Santo Stefano d\'Aveto'], [1, 'Sant\'Olcese'], [1, 'Savignone'], [1, 'Serra Riccò'], [1, 'Sestri Levante'], [1, 'Sori'], [1, 'Tiglieto'], [1, 'Torriglia'], [1, 'Tribogna'], [1, 'Uscio'], [1, 'Valbrevenna'], [1, 'Vobbia'], [1, 'Zoagli'],
             [2, 'Airole'], [2, 'Apricale'], [2, 'Aquila d\'Arroscia'], [2, 'Armo'], [2, 'Aurigo'], [2, 'Badalucco'], [2, 'Bajardo'], [2, 'Bordighera'], [2, 'Borghetto d\'Arroscia'], [2, 'Borgomaro'], [2, 'Camporosso'], [2, 'Caravonica'], [2, 'Carpasio'], [2, 'Castel Vittorio'], [2, 'Castellaro'], [2, 'Ceriana'], [2, 'Cervo'], [2, 'Cesio'], [2, 'Chiusanico'], [2, 'Chiusavecchia'], [2, 'Cipressa'], [2, 'Civezza'], [2, 'Cosio d\'Arroscia'], [2, 'Costarainera'], [2, 'Diano Arentino'], [2, 'Diano Castello'], [2, 'Diano Marina'], [2, 'Diano San Pietro'], [2, 'Dolceacqua'], [2, 'Dolcedo'], [2, 'Imperia'], [2, 'Isolabona'], [2, 'Lucinasco'], [2, 'Mendatica'], [2, 'Molini di Triora'], [2, 'Montalto Ligure'], [2, 'Montegrosso Pian Latte'], [2, 'Olivetta San Michele'], [2, 'Ospedaletti'], [2, 'Perinaldo'], [2, 'Pietrabruna'], [2, 'Pieve di Teco'], [2, 'Pigna'], [2, 'Pompeiana'], [2, 'Pontedassio'], [2, 'Pornassio'], [2, 'Prelà'], [2, 'Ranzo'], [2, 'Rezzo'], [2, 'Riva Ligure'], [2, 'Rocchetta Nervina'], [2, 'San Bartolomeo al Mare'], [2, 'San Biagio della Cima'], [2, 'San Lorenzo al Mare'], [2, 'Sanremo'], [2, 'Santo Stefano al Mare'], [2, 'Seborga'], [2, 'Soldano'], [2, 'Taggia'], [2, 'Terzorio'], [2, 'Triora'], [2, 'Vallebona'], [2, 'Vallecrosia'], [2, 'Vasia'], [2, 'Ventimiglia'], [2, 'Vessalico'], [2, 'Villa Faraldi'],
             [3, 'Ameglia'], [3, 'Arcola'], [3, 'Beverino'], [3, 'Bolano'], [3, 'Bonassola'], [3, 'Borghetto di Vara'], [3, 'Brugnato'], [3, 'Calice al Cornoviglio'], [3, 'Carro'], [3, 'Carrodano'], [3, 'Castelnuovo Magra'], [3, 'Deiva Marina'], [3, 'Follo'], [3, 'Framura'], [3, 'La Spezia'], [3, 'Lerici'], [3, 'Levanto'], [3, 'Maissana'], [3, 'Monterosso al Mare'], [3, 'Ortonovo'], [3, 'Pignone'], [3, 'Portovenere'], [3, 'Riccò del Golfo di Spezia'], [3, 'Riomaggiore'], [3, 'Rocchetta di Vara'], [3, 'Santo Stefano di Magra'], [3, 'Sarzana'], [3, 'Sesta Godano'], [3, 'Varese Ligure'], [3, 'Vernazza'], [3, 'Vezzano Ligure'], [3, 'Zignago'],
@@ -131,7 +131,7 @@ class Comune extends \mauriziocingolani\yii2fmwkphp\Migration {
     }
 
     public function drop() {
-        $this->dropTable('places_comuni');
+        $this->dropTable('{{%places_comuni}}');
     }
 
 }

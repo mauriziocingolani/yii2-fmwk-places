@@ -11,7 +11,7 @@ use mauriziocingolani\yii2fmwkphp\ActiveRecord;
 class Area extends ActiveRecord {
 
     public static function tableName(): string {
-        return 'places_aree';
+        return '{{%places_aree}}';
     }
 
     /* Validators */

@@ -15,7 +15,7 @@ use mauriziocingolani\yii2fmwkphp\ActiveRecord;
 class Regione extends ActiveRecord {
 
     public static function tableName(): string {
-        return 'places_regioni';
+        return 'places_regioni}}';
     }
 
     /* Validators */

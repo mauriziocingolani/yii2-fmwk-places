@@ -5,20 +5,20 @@ namespace mauriziocingolani\yii2fmwkplaces\migrations;
 class NazioneISO3166 extends \mauriziocingolani\yii2fmwkphp\Migration {
 
     public function create() {
-        $this->createTable('places_nazioni_iso3166', [
+        $this->createTable('{{%places_nazioni_iso3166}}', [
             'NazioneID' => self::Pk(),
             'NazioneIt' => self::typeVarchar(255, true),
             'NazioneEn' => self::typeVarchar(255, true),
             'NazioneCodice' => self::typeChar(3, true),
             self::Pk('NazioneID'),
                 ], self::TableOptionsLatin());
-        $this->createIndex('unique_placesnazioni_nazioneit', 'places_nazioni_iso3166', 'NazioneIt', true);
-        $this->createIndex('unique_placesnazioni_nazioneen', 'places_nazioni_iso3166', 'NazioneEn', true);
-        $this->createIndex('unique_placesnazioni_nazionecodice', 'places_nazioni_iso3166', 'NazioneCodice', true);
+        $this->createIndex('unique_placesnazioni_nazioneit', '{{%places_nazioni_iso3166}}', 'NazioneIt', true);
+        $this->createIndex('unique_placesnazioni_nazioneen', '{{%places_nazioni_iso3166}}', 'NazioneEn', true);
+        $this->createIndex('unique_placesnazioni_nazionecodice', '{{%places_nazioni_iso3166}}', 'NazioneCodice', true);
     }
 
     public function data() {
-        $this->batchInsert('places_nazioni_iso3166', ['NazioneID', 'NazioneIt', 'NazioneEn', 'NazioneCodice'], [
+        $this->batchInsert('{{%places_nazioni_iso3166}}', ['NazioneID', 'NazioneIt', 'NazioneEn', 'NazioneCodice'], [
             [1, 'Afghanistan', ' Afghanistan', 'AFG'],
             [2, 'Albania', ' Albania', 'ALB'],
             [7, 'Antartide', ' Antarctica', 'ATA'],
@@ -272,7 +272,7 @@ class NazioneISO3166 extends \mauriziocingolani\yii2fmwkphp\Migration {
     }
 
     public function drop() {
-        $this->dropTable('places_nazioni_iso3166');
+        $this->dropTable('{{%places_nazioni_iso3166}}');
     }
 
 }

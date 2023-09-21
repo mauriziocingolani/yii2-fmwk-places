@@ -5,20 +5,20 @@ namespace mauriziocingolani\yii2fmwkplaces\migrations;
 class Provincia extends \mauriziocingolani\yii2fmwkphp\Migration {
 
     public function create() {
-        $this->createTable('places_province', [
+        $this->createTable('{{%places_province}}', [
             'ProvinciaID' => self::Pk(),
             'RegioneID' => self::typeUnsignedInteger(true),
             'Provincia' => self::typeVarchar(100, true),
             'Sigla' => self::typeChar(2),
             self::Pk('ProvinciaID'),
                 ], self::TableOptionsLatin());
-        $this->createIndex('unique_placesprovince_provincia', 'places_province', 'Provincia', true);
-        $this->createIndex('unique_placesprovince_sigla', 'places_province', 'Sigla', true);
-        $this->addForeignKey('fk_placesprovince_regione', 'places_province', 'RegioneID', 'places_regioni');
+        $this->createIndex('unique_placesprovince_provincia', '{{%places_province}}', 'Provincia', true);
+        $this->createIndex('unique_placesprovince_sigla', '{{%places_province}}', 'Sigla', true);
+        $this->addForeignKey('fk_placesprovince_regione', '{{%places_province}}', 'RegioneID', '{{%places_regioni}}');
     }
 
     public function data() {
-        $this->batchInsert('places_province', ['ProvinciaID', 'RegioneID', 'Provincia', 'Sigla'], [
+        $this->batchInsert('{{%places_province}}', ['ProvinciaID', 'RegioneID', 'Provincia', 'Sigla'], [
             [1, 1, 'Genova', 'GE'], [2, 1, 'Imperia', 'IM'], [3, 1, 'La Spezia', 'SP'], [4, 1, 'Savona', 'SV'],
             [5, 2, 'Bergamo', 'BG'], [6, 2, 'Brescia', 'BS'], [7, 2, 'Como', 'CO'], [8, 2, 'Cremona', 'CR'], [9, 2, 'Lecco', 'LC'], [10, 2, 'Lodi', 'LO'], [11, 2, 'Mantova', 'MN'], [12, 2, 'Milano', 'MI'], [13, 2, 'Monza e della Brianza', 'MB'], [14, 2, 'Pavia', 'PV'], [15, 2, 'Sondrio', 'SO'], [16, 2, 'Varese', 'VA'],
             [17, 3, 'Alessandria', 'AL'], [18, 3, 'Asti', 'AT'], [19, 3, 'Biella', 'BI'], [20, 3, 'Cuneo', 'CN'], [21, 3, 'Novara', 'NO'], [22, 3, 'Torino', 'TO'], [23, 3, 'Verbano-Cusio-Ossola', 'VB'], [24, 3, 'Vercelli', 'VC'],
@@ -43,7 +43,7 @@ class Provincia extends \mauriziocingolani\yii2fmwkphp\Migration {
     }
 
     public function drop() {
-        $this->dropTable('places_province');
+        $this->dropTable('{{%places_province}}');
     }
 
 }
